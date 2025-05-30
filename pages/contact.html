@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kontaktai | Lauros Žemėlapių Portalas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../index.css">
+
+    <style>
+        /* CSS Kintamųjų deklaravimas, kad būtų galima naudoti pagrindines spalvas */
+        :root {
+            --main-accent-color: rgb(255, 44, 90); /* Pagrindinė akcento spalva (rožinė) */
+            --secondary-text-color: #555; /* Antrinė teksto spalva */
+            --primary-text-color: #333; /* Pagrindinė teksto spalva */
+            --light-background-color: #f8f8f8; /* Švelniai pilkas fonas */
+            --white-background-color: #fff; /* Baltas fonas */
+            --dark-footer-color: #333; /* Tamsi poraštės fono spalva */
+            /* Pridėta RGB versija permatomumui CSS. Išvedama iš --main-accent-color. */
+            --main-accent-color-rgb: 255, 44, 90;
+        }
+
+        body {
+            background-color: var(--light-background-color); /* Kad atitiktų pagrindinio puslapio foną */
+            font-family: 'Poppins', sans-serif; /* Užtikrina, kad Poppins bus naudojamas */
+            color: var(--primary-text-color);
+        }
+
+        /* Viršutinė antraštė kontaktų puslapyje */
+        .contact-page-header {
+            background-color: var(--main-accent-color); /* Pagrindinė akcento spalva */
+            color: var(--white-background-color);
+            padding: 20px 4vw;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        /* Apie svetainės kūrėją informacija */
+        .contact-info-section {
+            width: 80%;
+            margin: 0 auto 50px auto; /* Centruoja bloką */
+            padding: 30px;
+            background-color: var(--white-background-color);
+            border-radius: 8px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .contact-info-section h2 {
+            font-size: 2em;
+            color: var(--primary-text-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(var(--main-accent-color-rgb), 0.5); /* Naudojame RGBA akcento spalvą */
+            padding-bottom: 10px;
+            display: inline-block; /* Kad linija būtų tik po tekstu */
+        }
+        .contact-info-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: var(--secondary-text-color);
+            margin-bottom: 10px;
+        }
+        .contact-info-section a {
+            color: var(--main-accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+        .contact-info-section a:hover {
+            text-decoration: underline;
+        }
+
+        /* Kontaktų forma (iframe) konteineris */
+        .form-container {
+            width: 90%;
+            max-width: 900px; /* Maksimalus plotis, kad nebūtų per platu dideliuose ekranuose */
+            height: 700px; /* Padidintas aukštis, kad forma būtų labiau matoma */
+            margin: 50px auto; /* Centruoja bloką */
+            border-radius: 8px;
+            overflow: hidden; /* Paslėpti scrollbarus, jei forma netelpa pačiame iframe konteineryje */
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.15);
+            background-color: var(--white-background-color);
+        }
+        .form-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Pašalinti iframe rėmelį */
+        }
+
+        /* Grįžimo nuoroda */
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px;
+            font-size: 1.2em;
+        }
+        .back-link a {
+            color: var(--main-accent-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Mobiliesiems ekranams */
+        @media (max-width: 768px) {
+            .contact-page-header {
+                font-size: 2em;
+                padding: 15px 4vw;
+            }
+            .contact-info-section {
+                width: 95%;
+                padding: 20px;
+            }
+            .contact-info-section h2 {
+                font-size: 1.8em;
+            }
+            .contact-info-section p {
+                font-size: 1em;
+            }
+            .form-container {
+                width: 95%;
+                height: 600px; /* Šiek tiek mažesnis aukštis mobiliesiems */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-page-header">
+        <h1>Susisiekite su Manimi</h1>
+    </div>
+
+    <div class="contact-info-section">
+        <h2>Apie Svetainės Kūrėją</h2>
+        <p>Svetainę sukūrė: **Laura Petkevič**</p>
+        <p>Vilniaus universiteto, Kartografijos ir GIS III kurso studentė.</p>
+        <p>Ši svetainė yra studentės atlikta 4-oji praktinė užduotis studijų dalyko "Interneto technologijos ir GIS", skirta pademonstruoti gebėjimus dirbti su HTML, CSS ir integruoti interaktyvius žemėlapius.</p>
+        <p>El. paštas: <a href="mailto:laura.petkevic@chgf.stud.vu.lt">laura.petkevic@chgf.stud.vu.lt</a></p>
+        <p>GitHub: <a href="https://github.com/LAURAPETGEO" target="_blank">laurapetgeo.github.io</a></p>
+    </div>
+
+    <div class="form-container">
+      <iframe
+        width="100%"
+        height="100%"
+        frameborder="0"
+        scrolling="auto"
+        marginheight="0"
+        marginwidth="0"
+        src="https://docs.google.com/forms/d/e/1FAIpQLSd0Vpk-mxmI46KK_yxphnWArWPHo8OxCloRg8QPz8-dsU2LoQ/viewform?embedded=true"
+        title="Kontaktų forma (Google Forms)"
+      ></iframe>
+    </div>
+
+    <div class="back-link">
+        <a href="../index.html">Grįžti į pagrindinį puslapį</a>
+    </div>
+
+    <div id="footer">
+        Padaryta Žemėje žmogaus: Laura Petkevič <br> Vilniaus Universitetas, Kartografijos ir GIS
+        <br> Svetainė parengta kaip 4-oji praktinė užduotis studijų dalyko "Interneto technologijos ir GIS".
+        <br> Sukūrimo data: 2025 m. gegužės 30 d.
+        <br> Kontaktai: <a href="mailto:laura.petkevic@chgf.stud.vu.lt">laura.petkevic@chgf.stud.vu.lt</a> | <a href="https://github.com/LAURAPETGEO" target="_blank">laurapetgeo.github.io</a>
+    </div>
+
+</body>
+</html>
