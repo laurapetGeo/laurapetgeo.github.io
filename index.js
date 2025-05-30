@@ -1,5 +1,5 @@
 // Nustato pradinį lango plotį, reikalingą antraštės elgesiui
-var width = $(window).width(); 
+var width = $(window).width();
 
 // Funkcija, kuri vykdoma slenkant puslapį
 window.onscroll = function(){
@@ -7,27 +7,31 @@ window.onscroll = function(){
 if ((width >= 1000)){
     // Jei slenkama žemyn (daugiau nei 80px nuo viršaus)
     if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-        $("#header").css("background","#fff"); // Pakeičia antraštės foną į baltą
-        $("#header").css("color","#000");     // Pakeičia antraštės teksto spalvą į juodą
+        $("#header").css("background", "var(--white-background-color)"); // Pakeičia antraštės foną į baltą
+        $("#header").css("color", "var(--primary-text-color)");     // Pakeičia antraštės teksto spalvą į tamsią
         $("#header").css("box-shadow","0px 0px 20px rgba(0,0,0,0.09)"); // Prideda šešėlį
         $("#header").css("padding","4vh 4vw"); // Sumažina antraštės užpildymą
         // Pakeičia navigacijos nuorodų pabraukimo spalvą užvedus pelę
         $("#navigation a").hover(function(){
-            $(this).css("border-bottom","2px solid rgb(255, 44, 90)"); // Akcento spalva
+            $(this).css("border-bottom","2px solid var(--main-accent-color)"); // Akcento spalva
         },function(){
             $(this).css("border-bottom","2px solid transparent"); // Permatomas pabraukimas
         });
+        // PRIDĖTA: Pakeisti logotipo spalvą, kad matytųsi ant balto fono
+        $("#logo").css("color", "var(--main-accent-color)");
     }else{ // Jei slenkama atgal į viršų (mažiau nei 80px nuo viršaus)
-        $("#header").css("background","transparent"); // Antraštės fonas permatomas
-        $("#header").css("color","#fff");             // Antraštės tekstas baltas
+        $("#header").css("background", "transparent"); // Antraštės fonas permatomas
+        $("#header").css("color", "var(--white-background-color)");             // Antraštės tekstas baltas
         $("#header").css("box-shadow","0px 0px 0px rgba(0,0,0,0)"); // Pašalina šešėlį
         $("#header").css("padding","6vh 4vw"); // Atstato antraštės užpildymą
         // Atstato navigacijos nuorodų pabraukimo spalvą užvedus pelę
         $("#navigation a").hover(function(){
-            $(this).css("border-bottom","2px solid #fff");
+            $(this).css("border-bottom","2px solid var(--white-background-color)");
         },function(){
             $(this).css("border-bottom","2px solid transparent");
         });
+        // PRIDĖTA: Atstatyti logotipo spalvą, kad matytųsi ant permatomo fono
+        $("#logo").css("color", "var(--main-accent-color)"); // Laikome akcento spalvą
     }
 }
 }
@@ -77,6 +81,6 @@ $(document).ready(function(){
         }, 1800, function(){ // Animacija truks 1.8 sekundės
         window.location.hash = hash; // Pakeičia URL hash po slinkimo
        });
-       } 
+       }
      });
    });
