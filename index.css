@@ -224,7 +224,7 @@ header table {
 /* Dešinėje esantis viršutinis paveikslėlis */
 #rightImage {
     /* Jei buvo kažkoks senas background-image, jį pakeiskite */
-    background-image: url('img/images/main_hero_image.jpg'); /* <-- Pakeiskite šią eilutę! */
+    background-image: url('img/main_hero_image.jpg'); /* <-- Pakeiskite šią eilutę! */
     background-size: cover; /* Užtikrina, kad nuotrauka užpildys visą elementą */
     background-position: center; /* Centruoja nuotrauką elemente */
     background-repeat: no-repeat; /* Užtikrina, kad nuotrauka nesikartos */
@@ -279,25 +279,57 @@ header table {
 
 /* Nuotraukų galerija (Mano Darbai) */
 #photos {
-    width:100%;
-    columns:3; /* Nuotraukos išdėstomos trimis stulpeliais */
-    column-gap:4%;
-    z-index:1;
-    transition:0.4s ease-in-out;
+    /* PAKEISTA: Naudojame Grid vietoj Columns, kad galėtume kontroliuoti kiekvieną elementą */
+    display: grid;
+    /* `repeat(auto-fit, minmax(280px, 1fr))` bandys įdėti kuo daugiau elementų eilutėje,
+       kurių minimalus plotis 280px, ir tolygiai paskirstys likusią vietą. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; /* Atstumas tarp nuotraukų elementų */
+    margin-top: 40px;
+    justify-content: center; /* Centruoja tinklelio elementus, jei jų yra mažiau nei telpa eilutėje */
+    /* Z-index ir transition išliko */
+    z-index: 1;
+    transition: 0.4s ease-in-out;
 }
 
-#photos img {
-    width:100%;
-    height:auto;
-    margin:4.5% 0px;
-    transition:0.4s ease-in-out;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+/* Naujas konteineris kiekvienam nuotraukos ir pavadinimo elementui */
+.photo-item {
+    background-color: var(--white-background-color); /* Baltas fonas */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden; /* Svarbu, kad nuotrauka neišlįstų už rėmelių */
+    display: flex;
+    flex-direction: column; /* Nuotrauka viršuje, pavadinimas apačioje */
+    align-items: center; /* Centruoja turinį konteineryje (horizontliai) */
+    text-align: center; /* Centruoja pavadinimo tekstą */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sklandus efektas užvedus pelę */
+    cursor: pointer; /* Rodo, kad galima spustelėti */
 }
 
-#photos img:hover {
-    transform: scale(1.05);
-    cursor: pointer;
+.photo-item:hover {
+    transform: translateY(-5px); /* Šiek tiek pakelia elementą užvedus pelę */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Stiliai pačiai nuotraukai konteinerio viduje */
+.photo-item img {
+    width: 100%; /* Nuotrauka užima visą konteinerio plotį */
+    height: 200px; /* Nustatykite fiksuotą aukštį, kad visos nuotraukos būtų vienodo dydžio */
+    object-fit: cover; /* Apkirps nuotrauką, kad tilptų, išlaikydama proporcijas */
+    border-bottom: 1px solid #eee; /* Atskyrimo linija tarp nuotraukos ir pavadinimo */
+    /* Panaikiname margin, nes jau naudojame gap ant #photos ir padding ant title */
+    margin: 0; /* ANKSČIAU BUVO margin:4.5% 0px;, DABAR NULIS */
+    border-radius: 0; /* Panaikiname rėmelių apvalinimą img, nes apvalinsime .photo-item */
+    box-shadow: none; /* Panaikiname img šešėlį, nes šešėlį duodame visam .photo-item */
+}
+
+/* Stiliai nuotraukos pavadinimui */
+.photo-title {
+    font-size: 1.1em;
+    font-weight: 600; /* Šiek tiek paryškintas */
+    color: var(--primary-text-color); /* Pagrindinė teksto spalva */
+    margin: 15px 10px; /* Atstumas nuo nuotraukos ir šonų */
+    line-height: 1.4;
 }
 
 /* Apie Mane skiltis */
