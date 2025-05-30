@@ -223,12 +223,17 @@ header table {
 
 /* Dešinėje esantis viršutinis paveikslėlis */
 #rightImage {
-    width:100%;
-    height:95vh;
-    /* Pakeiskite šią nuotrauką į savo (pvz., susijusią su kartografija, GIS), arba išimkite šią skiltį HTML, jei nereikalinga */
-    background:linear-gradient(0deg,rgba(255, 44, 90, 0.8),rgba(255, 44, 90, 0.8)),url("../images/default_geo_background.jpg") center center; /* Pakeistas paveikslėlio kelias, jei perkelsite į images aplanką */
-    background-size:cover;
-    background-repeat:no-repeat;
+    /* Jei buvo kažkoks senas background-image, jį pakeiskite */
+    background-image: url('img/images/main_hero_image.jpg'); /* <-- Pakeiskite šią eilutę! */
+    background-size: cover; /* Užtikrina, kad nuotrauka užpildys visą elementą */
+    background-position: center; /* Centruoja nuotrauką elemente */
+    background-repeat: no-repeat; /* Užtikrina, kad nuotrauka nesikartos */
+    /* Galite pakoreguoti aukštį, jei reikia, priklausomai nuo bendro išdėstymo */
+    height: 500px; /* Pavyzdys, patikrinkite, koks jūsų dizaine tinka */
+    width: 50%; /* Pavyzdys, kad užimtų pusę turinio pločio */
+    /* Kiti stiliai, kuriuos galbūt jau turite arba norite pridėti */
+    border-radius: 8px; /* Pavyzdys: suapvalinti kampai */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Pavyzdys: subtilus šešėlis */
 }
 
 /* Bendri stiliai sekcijoms (Mano Darbai, Apie Mane, Žemėlapiai) */
