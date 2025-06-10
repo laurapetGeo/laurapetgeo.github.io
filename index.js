@@ -66,7 +66,7 @@ setTimeout(function(){
       $("#loading").removeClass("animated fadeOut");
       $("#loading").css("display","none");
     },800);
-},1650); // Palaukia 1.65 sekundės prieš pradedant paslėpti įkrovimo ekraną
+},500); // Palaukia 1.65 sekundės prieš pradedant paslėpti įkrovimo ekraną
 
 // Kai dokumentas pilnai užkrautas, prideda sklandų slinkimą paspaudus ant nuorodų su # (hash)
 $(document).ready(function(){
