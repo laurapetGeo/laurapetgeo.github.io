@@ -63,18 +63,17 @@ header {
     z-index:2;
 }
 
-header table {
-    width:100%;
-    height: 70px; /* Nustatykite antraštės aukštį */
-}
-
-header table tr td {
-    vertical-align: middle; /* Sulygiuoja logo ir navigaciją vertikaliai */
+/* ANTRAŠTĖS PAKEITIMAI: Naudojame Flexbox antraštės turiniui */
+header .header-content {
+    display: flex; /* Aktyvuojame Flexbox antraštės elementams */
+    justify-content: space-between; /* Išdėstome logotipą kairėje, navigaciją dešinėje */
+    align-items: center; /* Centruojame elementus vertikaliai */
+    height: 70px; /* Nustatome antraštės aukštį */
+    /* Antraštės paddingas jau yra nurodytas aukščiau header selektoriuje */
 }
 
 /* Logotipo sritis (LP monograma + tekstas) */
 #logo {
-    width:auto;
     font-size: 1.8em; /* Teksto dydis */
     font-weight: bold;
     color: var(--main-accent-color); /* Logotipo teksto spalva */
@@ -88,9 +87,8 @@ header table tr td {
 #logo img {
     height: 50px; /* Logo aukštis */
     width: auto; /* Plotis prisitaikys automatiškai */
-    vertical-align: middle;
+    vertical-align: middle; /* Tai nebereikalinga Flexbox, bet palieku dėl suderinamumo */
 }
-
 
 /* Paveikslėlio padidinimo langas */
 #magnify {
@@ -128,8 +126,8 @@ header table tr td {
 
 /* Navigacijos nuorodos */
 #navigation {
-    width:auto;
-    text-align:right;
+    /* Plotis nebėra svarbus, Flexbox valdys elementų plotį */
+    text-align:right; /* Išlaikome tekstą dešinėje, jei navigacija būtų atskira */
 }
 
 #navigation a {
@@ -145,27 +143,30 @@ header table tr td {
     border-bottom:2px solid var(--white-background-color);
 }
 
-/* Viršutinė dalis (Svetainės pristatymas) */
+/* Viršutinė dalis (Svetainės pristatymas) - PAKEITIMAI: Naudojame Flexbox */
 #top_part {
+    display: flex; /* Aktyvuojame Flexbox */
+    align-items: center; /* Centruojame elementus vertikaliai */
+    justify-content: space-between; /* Išdėstome turinį vienas šalia kito */
     width:100%;
     border:2vh solid var(--white-background-color);
     padding-top: 100px; /* Kad turinys prasidėtų žemiau fiksuotos antraštės */
     box-sizing: border-box;
 }
 
-#top_part tr td{
-    width:50%;
-}
+/* #top_part tr td stiliai buvo pašalinti, nes nebenaudojame <table> */
 
 /* Apie skiltis (kairėje viršutinėje dalyje) */
 #about {
-    width:84% !important;
+    flex: 1; /* Leidžiame šiam blokui užimti laisvą vietą */
+    max-width: 60%; /* Nustatome maksimalų plotį (galite koreguoti) */
+    padding-right: 30px; /* Tarpas tarp teksto ir paveikslėlio */
     height:95vh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     text-align:left;
-    padding:0px 8%;
+    padding-left:8%; /* Išsaugome kairės pusės paddingą */
     box-sizing: border-box;
 }
 
@@ -182,14 +183,12 @@ header table tr td {
     margin-bottom: 1.5em;
 }
 
-#about table {
-    width:70%;
-    margin-top:4vh;
-}
-
-#about table tr td {
-    width:20% !important;
-    text-align:left;
+/* Socialinių nuorodų konteineris - PAKEITIMAI: Naudojame Flexbox */
+.social-links {
+    display: flex; /* Aktyvuojame Flexbox, kad piktogramos būtų eilėje */
+    gap: 15px; /* Tarpas tarp socialinių piktogramų */
+    margin-top:4vh; /* Tarpas tarp teksto ir piktogramų */
+    /* Anksčiau buvo apie table width:70%; ir tr td width:20% - tai nebereikalinga */
 }
 
 /* Socialinių tinklų ikonėlės */
@@ -201,7 +200,7 @@ header table tr td {
     background:transparent;
     transition:0.4s ease-in-out;
     font-weight:bold;
-    margin:0px 8px;
+    /* margin:0px 8px; - šis marginas nebereikalingas dėl gap, bet galite palikti, jei norite papildomo tarpo */
 }
 
 .social:hover {
@@ -239,8 +238,8 @@ header table tr td {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    flex: 0 0 350px; /* Nustatome fiksuotą plotį ir neleidžiame jam trauktis ar augti */
     height: 500px; /* Aukštis, galite koreguoti */
-    width: 50%; /* Plotis, galite koreguoti */
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -291,7 +290,7 @@ header table tr td {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Prisitaikantis 3+ stulpelių išdėstymas */
     gap: 30px; /* Tarpai tarp nuotraukų elementų */
     margin-top: 40px;
-    justify-content: center;
+    justify-content: center; /* Centruoja tinklelio elementus, jei yra laisvos vietos */
     z-index: 1;
     transition: 0.4s ease-in-out;
 }
@@ -335,7 +334,6 @@ header table tr td {
     line-height: 1.4;
 }
 
-
 /* Apie Mane skiltis */
 #bio {
     width:92vw;
@@ -357,6 +355,15 @@ header table tr td {
     margin-top: 50px;
 }
 
+/* PAKEITIMAI: Kontaktų sekcijai reikia naujų Flexbox/Grid stilių, nes originaliai buvo lentelė */
+/* Jei kontaktų forma ir informacija yra vienas šalia kito */
+#contact-content { /* Įsivaizduokime, kad HTML'e yra toks div'as, apjungiantis formą ir adresą */
+    display: flex;
+    flex-wrap: wrap; /* Leidžia elementams lūžti į naują eilutę, jei netelpa */
+    gap: 40px; /* Tarpas tarp elementų */
+    justify-content: space-between; /* Arba flex-start, jei norite, kad būtų pradžioje */
+}
+
 #contact h1 {
     padding:5px 0px;
     border-bottom:4px solid var(--main-accent-color);
@@ -366,35 +373,22 @@ header table tr td {
     font-size: 2.2em;
 }
 
-#contact table {
-    width:100%;
-}
-
-#contact table tr td {
-    width:50%;
-    vertical-align: top;
-}
-
-#inner_div table{
-    width:100%;
-}
-
-#inner_div table tr td{
-    font-weight:bold;
-    color: var(--secondary-text-color);
-}
-
-#inner_table tr td{
-    padding:10px 20px !important;
-}
+/* Šie selektoriai buvo susiję su <table> - jie nebereikalingi be lentelės struktūros */
+/* #contact table { width:100%; } */
+/* #contact table tr td { width:50%; vertical-align: top; } */
+/* #inner_div table{ width:100%; } */
+/* #inner_div table tr td{ font-weight:bold; color: var(--secondary-text-color); } */
+/* #inner_table tr td{ padding:10px 20px !important; } */
 
 #contact form {
-    width:100%;
+    flex: 1; /* Leisti formai užimti laisvą vietą */
+    min-width: 300px; /* Minimalus formos plotis, kad būtų patogu mobiliesiems */
+    /* width:100%; - nereikalingas, Flexbox valdys */
 }
 
 #contact form input,
 #contact form textarea {
-    width:96%;
+    width:96%; /* Paliekame originalų plotį, bet Flexbox elgsis geriau */
     margin:20px 1%;
     background:transparent;
     border:0px;
@@ -415,9 +409,10 @@ header table tr td {
 }
 
 #address {
+    flex: 1; /* Leisti adresui užimti laisvą vietą */
+    min-width: 250px; /* Minimalus adreso bloko plotis */
     position:relative;
-    top:-25px;
-    left:30px;
+    /* top:-25px; left:30px; - šie stiliai greičiausiai buvo skirti specifiniam išdėstymui su lentele, gali reikėti juos koreguoti arba pašalinti */
 }
 
 /* Poraštė */
@@ -476,7 +471,7 @@ button:focus {
     background-color: var(--light-background-color);
 }
 
-.map-container {
+.map-category { /* Naujas stilius žemėlapių kategorijų konteineriui */
     background-color: var(--white-background-color);
     border-radius: 8px;
     box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
@@ -484,7 +479,16 @@ button:focus {
     margin-bottom: 40px;
 }
 
-.map-container h2 {
+.map-sub-category { /* Naujas stilius pavieniams žemėlapių blokams */
+    margin-bottom: 30px; /* Tarpas tarp atskirų žemėlapių aprašymų */
+}
+
+.map-sub-category:last-child {
+    margin-bottom: 0; /* Paskutiniam sub-kategorijos elementui nereikia apačios maržos */
+}
+
+
+.map-category h2 {
     font-size: 1.8em;
     color: var(--main-accent-color);
     margin-bottom: 15px;
@@ -493,21 +497,21 @@ button:focus {
     width: fit-content;
 }
 
-.map-container h3 {
+.map-sub-category h3 { /* Pakeista iš .map-container h3 į .map-sub-category h3 */
     font-size: 1.4em;
     color: var(--primary-text-color);
     margin-top: 30px;
     margin-bottom: 10px;
 }
 
-.map-container p {
+.map-category p { /* Pakeista iš .map-container p į .map-category p */
     font-weight: normal;
     color: var(--secondary-text-color);
     margin-bottom: 20px;
     line-height: 1.5;
 }
 
-.map-container iframe {
+.map-category iframe { /* Pakeista iš .map-container iframe į .map-category iframe */
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0px 2px 10px rgba(0,0,0,0.08);
@@ -524,48 +528,56 @@ button:focus {
         position:absolute; /* Pakeista į absolute mobiliesiems */
         box-shadow:0px 0px 20px rgba(0,0,0,0.09);
     }
-    #header table tr td {
-        width:100%;
-        display:block;
-        text-align:center;
-        padding:15px 0px;
+    /* ANTRAŠTĖS PAKEITIMAI: Flexbox taisyklės mobiliesiems */
+    header .header-content {
+        flex-direction: column; /* Mobiliesiems elementus dėstome stulpeliu */
+        height: auto; /* Aukštis prisitaikys prie turinio */
+    }
+
+    #navigation {
+        text-align:center; /* Centruojame navigacijos nuorodas */
+        margin-top: 15px; /* Tarpas tarp logo ir navigacijos */
     }
     #navigation a {
         color:var(--primary-text-color); /* Teksto spalva mobiliesiems */
         margin-left:2vw;
         margin-right:2vw;
+        display: inline-block; /* Kad nuorodos būtų eilėje, bet su tarpais */
+        margin-bottom: 10px; /* Tarpas tarp nuorodų, jei lūžta į naują eilutę */
     }
     #navigation a:hover{
         border-bottom:2px solid var(--main-accent-color);
     }
     #logo {
         color:var(--main-accent-color);
-        /* Flexbox stiliai logo-tekstui mobiliesiems (centruoja) */
-        justify-content: center;
+        justify-content: center; /* Centruoja logotipą mobiliesiems */
     }
     /* Logo paveikslėlis mobiliuosiuose (jei reikia mažinti) */
     #logo img {
         height: 40px; /* Pavyzdys, jei mobiliajame logo turi būti mažesnis */
     }
 
-    /* Pagrindinė dalis mobiliesiems */
+    /* Pagrindinė dalis mobiliesiems - PAKEITIMAI: Flexbox kryptis stulpeliu */
+    #top_part {
+        flex-direction: column; /* Dėstome elementus stulpeliu mobiliesiems */
+        border:0px;
+        padding-top: 0;
+        align-items: center; /* Centruojame visą turinį */
+        text-align: center; /* Centruojame tekstą */
+    }
     #rightImage {
         display:none; /* Slepia didelį paveikslėlį mobiliesiems */
     }
-    #top_part {
-        border:0px;
-        padding-top: 0;
-    }
-    #top_part tr td{
-        width:100%;
-        text-align:center;
-    }
+    /* #top_part tr td stiliai buvo pašalinti */
+
     #about {
         width:92% !important;
         height:auto;
         padding-top:15vh !important;
         text-align:center;
         padding:0px 4%;
+        max-width: 100%; /* Leidžiame užimti visą plotį mobiliesiems */
+        padding-right: 4%; /* Suvienodiname paddingą */
     }
     #about h1 {
         font-size: 35px;
@@ -573,13 +585,15 @@ button:focus {
     #about p {
         font-size: 1em;
     }
-    #about table {
-        width:100%;
-        margin-top:6vh;
+
+    /* Socialinių nuorodų konteineris mobiliesiems - PAKEITIMAI: Centravimas */
+    .social-links {
+        justify-content: center; /* Centruojame socialines piktogramas */
+        margin-top:6vh; /* Koreguojame tarpą */
+        width: 100%; /* Užima visą plotį */
     }
-    #about table tr td {
-        text-align:center;
-    }
+
+    /* Mygtukas mobiliesiems */
     .btn_one {
         padding:6px 30px;
         width:60%;
@@ -592,19 +606,29 @@ button:focus {
         box-shadow:0px 10px 40px rgba(255, 44, 90, 0.8);
         cursor:pointer;
     }
-    #contact table tr td {
-        width:100%;
-        display:block;
+
+    /* Kontaktų sekcija mobiliesiems - PAKEITIMAI: Flexbox kryptis stulpeliu */
+    #contact-content { /* Įsivaizduokime, kad HTML'e yra toks div'as, apjungiantis formą ir adresą */
+        flex-direction: column; /* Elementai dėstomi stulpeliu mobiliesiems */
+        gap: 20px; /* Tarpas tarp elementų */
     }
-    #inner_table tr td{
-        padding:10px 0px !important;
-    }
+
+    /* Šie stiliai buvo susiję su <table> - jie nebereikalingi */
+    /* #contact table tr td { width:100%; display:block; } */
+    /* #inner_table tr td{ padding:10px 0px !important; } */
+
     #contact form input {
         width:90%;
     }
     #contact form textarea {
         width:90%;
     }
+    #address {
+        position: static; /* Panaikiname absoliučią poziciją mobiliesiems */
+        margin-top: 20px; /* Pridedame šiek tiek tarpo */
+        text-align: center; /* Centruojame adresą */
+    }
+
     /* Centruoti antraštes mobiliuosiuose */
     #info-sections h1, #bio h1, #contact h1, #maps-section h1 {
         width: auto;
@@ -628,21 +652,26 @@ button:focus {
     }
 
     /* Mobilieji žemėlapių sekcijos stiliai */
-    .map-container {
+    .map-category {
         padding: 20px;
         margin-bottom: 30px;
     }
-    .map-container h2 {
+    .map-category h2 {
         font-size: 1.5em;
         text-align: center;
         width: auto;
         margin: 0 auto 15px auto;
     }
-    .map-container h3 {
+    .map-sub-category h3 { /* Pakeista iš .map-container h3 */
         font-size: 1.2em;
         text-align: center;
     }
-    .map-container p {
+    .map-category p { /* Pakeista iš .map-container p */
         font-size: 0.95em;
     }
+}
+
+/* Bendri stiliai main žymai, jei naudojate ją kaip pagrindinį konteinerį */
+main {
+    display: block; /* Užtikrinti, kad main elgiasi kaip blokinis elementas */
 }
