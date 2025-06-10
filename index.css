@@ -159,7 +159,7 @@ header .header-content {
 /* Apie skiltis (kairėje viršutinėje dalyje) */
 #about {
     flex: 1; /* Leidžiame šiam blokui užimti laisvą vietą */
-    max-width: 60%; /* Nustatome maksimalų plotį (galite koreguoti) */
+    max-width: 50%; /* Nustatome maksimalų plotį (galite koreguoti) */
     padding-right: 30px; /* Tarpas tarp teksto ir paveikslėlio */
     height:95vh;
     display:flex;
@@ -234,12 +234,13 @@ header .header-content {
 
 /* Dešinėje esantis viršutinis paveikslėlis (žemėlapis su L raide) */
 #rightImage {
-    background-image: url('img/main_hero_image.jpg'); /* Kelias į jūsų pervadintą paveikslėlį */
+    background-image: url('img/main_hero_image.jpg'); /* Kelias į pervadintą paveikslėlį */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    flex: 0 0 350px; /* Nustatome fiksuotą plotį ir neleidžiame jam trauktis ar augti */
-    height: 500px; /* Aukštis, galite koreguoti */
+    flex: 1; /* Leidžiame paveikslėliui užimti laisvą vietą */
+    min-width: 400px; /* Minimalus paveikslėlio plotis. pvz., 450px ar 500px, jei norite, kad būtų dar didesnis */
+    height: 550px; /* Padidiname aukštį. Galima koreguoti pagal poreikį. */
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
