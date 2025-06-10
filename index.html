@@ -21,126 +21,129 @@
     </div>
 
     <header id="header" class="animated slideInDown" style="animation-delay:1.8s;">
-        <table>
-            <tr>
-                <td id="logo">
-                    Lauros Žemėlapiai.
-                </td>
-                <td id="navigation">
-                    <a href="#top_part">Apie</a> <a href="#maps-section">Žemėlapiai</a>
-                    <a href="pages/contact.html">Kontaktai</a>
-                </td>
-            </tr>
-        </table>
+        <div class="header-content">
+            <div id="logo">
+                Lauros Žemėlapiai.
+            </div>
+            <nav id="navigation">
+                <a href="#top_part">Apie</a>
+                <a href="#maps-section">Žemėlapiai</a>
+                <a href="pages/contact.html">Kontaktai</a>
+            </nav>
+        </div>
     </header>
 
-    <table id="top_part">
-        <tr>
-            <td id="about" class="animated slideInLeft" style="animation-delay:2s;">
+    <main>
+        <section id="top_part" class="animated slideInLeft" style="animation-delay:2s;">
+            <div id="about">
                 <h1>Sveiki atvykę į Lauros Žemėlapių Portalą!</h1>
                 <p>Esu Laura Petkevič, Vilniaus universiteto, Kartografijos ir GIS III kurso studentė. Ši svetainė parengta kaip 4-oji praktinė užduotis studijų dalyko "Interneto technologijos ir GIS". Jos tikslas – pristatyti visus per semestrą atliktus praktinius darbus, apimančius interaktyvių žemėlapių kūrimą ir duomenų vizualizavimą, taikant pažangias technologijas.</p>
                 <p>Čia rasite interaktyvius žemėlapius, sukurtus naudojant Kepler.gl, Geoportal.lt ir ArcGIS Online platformas, demonstruojančios skirtingas geografinių duomenų analizės ir vizualizavimo galimybes. Kviečiu susipažinti su mano projektais, kurie atspindi įgytas žinias ir įgūdžius.</p>
 
-                <table>
-                    <tr>
-                        <td class="animated zoomIn" style="animation-delay:3.0s;"><a class="social" href="https://github.com/LAURAPETGEO" target="_blank"><i class="fab fa-github"></i></a></td>
-                    </tr>
-                </table>
-            </td>
-            <td id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></td>
-        </tr>
-    </table>
+                <div class="social-links animated zoomIn" style="animation-delay:3.0s;">
+                    <a class="social" href="https://github.com/LAURAPETGEO" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div id="rightImage" class="animated jackInTheBox" style="animation-delay:2.2s;"></div>
+        </section>
 
-    <div id="info-sections">
-        <div id="work">
-            <h1>Mano Darbai-Apžvalga</h1>
-            <p>Šiame skyriuje rasite mano atliktų žemėlapių projektų vizualinę apžvalgą. Kiekviena nuotrauka yra ekrano kopija arba vizualizacija, susijusi su konkrečiu projektu. Paspauskite ant nuotraukos, kad ją padidintumėte ir pamatytumėte detaliau.</p>
-            <div id="photos">
-    <div class="photo-item">
-        <img onclick="magnify($(this).attr('src'))" src="img/map_1_preview.png" alt="Kepler.gl tornadų ir prieglaudų žemėlapio peržiūra">
-        <p class="photo-title">Tornadų ir Prieglaudų Žemėlapis</p>
-    </div>
-    <div class="photo-item">
-        <img onclick="magnify($(this).attr('src'))" src="img/map_2_preview.png" alt="Žemės drebėjimų 3D žemėlapio peržiūra">
-        <p class="photo-title">Žemės Drebėjimų 3D Žemėlapis</p>
-    </div>
-    <div class="photo-item">
-        <img onclick="magnify($(this).attr('src'))" src="img/map_3_preview.png" alt="Tornadų intensyvumo gardelės žemėlapio peržiūra">
-        <p class="photo-title">Tornadų Intensyvumo Gardelės</p>
-    </div>
-    <div class="photo-item">
-        <img onclick="magnify($(this).attr('src'))" src="img/map_4_preview.png" alt="Eismo įvykių analizės žemėlapis">
-        <p class="photo-title">Eismo Įvykių Analizė</p>
-    </div>
-    <div class="photo-item">
-        <img onclick="magnify($(this).attr('src'))" src="img/map_5_preview.png" alt="Aplinkos švaros pasiūlymų žemėlapis">
-        <p class="photo-title">Aplinkos Švaros Pasiūlymai</p>
-    </div>
-</div>
+        <section id="info-sections">
+            <div id="work">
+                <h1>Mano Darbai-Apžvalga</h1>
+                <p>Šiame skyriuje rasite mano atliktų žemėlapių projektų vizualinę apžvalgą. Kiekviena nuotrauka yra ekrano kopija arba vizualizacija, susijusi su konkrečiu projektu. Paspauskite ant nuotraukos, kad ją padidintumėte ir pamatytumėte detaliau.</p>
+                <div id="photos">
+                    <div class="photo-item">
+                        <img onclick="magnify($(this).attr('src'))" src="img/map_1_preview.png" alt="Kepler.gl tornadų ir prieglaudų žemėlapio peržiūra">
+                        <p class="photo-title">Tornadų ir Prieglaudų Žemėlapis</p>
+                    </div>
+                    <div class="photo-item">
+                        <img onclick="magnify($(this).attr('src'))" src="img/map_2_preview.png" alt="Žemės drebėjimų 3D žemėlapio peržiūra">
+                        <p class="photo-title">Žemės Drebėjimų 3D Žemėlapis</p>
+                    </div>
+                    <div class="photo-item">
+                        <img onclick="magnify($(this).attr('src'))" src="img/map_3_preview.png" alt="Tornadų intensyvumo gardelės žemėlapio peržiūra">
+                        <p class="photo-title">Tornadų Intensyvumo Gardelės</p>
+                    </div>
+                    <div class="photo-item">
+                        <img onclick="magnify($(this).attr('src'))" src="img/map_4_preview.png" alt="Eismo įvykių analizės žemėlapis">
+                        <p class="photo-title">Eismo Įvykių Analizė</p>
+                    </div>
+                    <div class="photo-item">
+                        <img onclick="magnify($(this).attr('src'))" src="img/map_5_preview.png" alt="Aplinkos švaros pasiūlymų žemėlapis">
+                        <p class="photo-title">Aplinkos Švaros Pasiūlymai</p>
+                    </div>
+                </div>
+            </div>
 
-        <div id="bio">
-            <h1>Apie Mane ir Studijas</h1>
-            <p>Esu Vilniaus universiteto studentė, aistringai besidominti kartografija ir GIS, ir interneto technologijų taikymu geografijoje. Studijų metu įgijau teorinių žinių ir praktinių įgūdžių dirbant su įvairiomis geoinformacinėmis platformomis, tokiomis kaip ArcGIS Pro, QGIS, ArcGIS Online, Geoportal.lt, ir įrankiais, kaip Kepler.gl. Taip pat mokausi ir taikau programavimo kalbas bei žiniatinklio kūrimo technologijas, skirtas interaktyvių žemėlapių ir erdvinės duomenų vizualizacijų kūrimui.</p>
-            <p>Ši svetainė yra mano asmeninis portfolio, atspindintis mano mokymosi kelionę, praktinius gebėjimus ir gebėjimą integruoti skirtingas GIS technologijas. Tikiuosi, kad mano darbai padės jums geriau suprasti geografinių duomenų svarbą ir jų panaudojimo galimybes įvairiose srityse.</p>
-        </div>
-    </div>
+            <div id="bio">
+                <h1>Apie Mane ir Studijas</h1>
+                <p>Esu Vilniaus universiteto studentė, aistringai besidominti kartografija ir GIS, ir interneto technologijų taikymu geografijoje. Studijų metu įgijau teorinių žinių ir praktinių įgūdžių dirbant su įvairiomis geoinformacinėmis platformomis, tokiomis kaip ArcGIS Pro, QGIS, ArcGIS Online, Geoportal.lt, ir įrankiais, kaip Kepler.gl. Taip pat mokausi ir taikau programavimo kalbas bei žiniatinklio kūrimo technologijas, skirtas interaktyvių žemėlapių ir erdvinės duomenų vizualizacijų kūrimui.</p>
+                <p>Ši svetainė yra mano asmeninis portfolio, atspindintis mano mokymosi kelionę, praktinius gebėjimus ir gebėjimą integruoti skirtingas GIS technologijas. Tikiuosi, kad mano darbai padės jums geriau suprasti geografinių duomenų svarbą ir jų panaudojimo galimybes įvairiose srityse.</p>
+            </div>
+        </section>
 
-    <div id="maps-section">
-        <h1>Mano Žemėlapiai - Detaliau</h1>
-        <p>Žemiau pateikiami interaktyvūs žemėlapiai, sukurti per studijų dalyko "Interneto technologijos ir GIS" praktinius užsiėmimus. Kiekvienas žemėlapis iliustruoja skirtingas duomenų vizualizavimo, analizės ir interaktyvumo galimybes.</p>
+        <section id="maps-section">
+            <h1>Mano Žemėlapiai - Detaliau</h1>
+            <p>Žemiau pateikiami interaktyvūs žemėlapiai, sukurti per studijų dalyko "Interneto technologijos ir GIS" praktinius užsiėmimus. Kiekvienas žemėlapis iliustruoja skirtingas duomenų vizualizavimo, analizės ir interaktyvumo galimybes.</p>
 
-        <div class="map-container">
-            <h2>1. Kepler.gl Žemėlapiai</h2>
-            <p>Šie trys žemėlapiai sukurti naudojant Kepler.gl platformą ir sudaro pirmąją praktinę užduotį. Jie demonstruoja skirtingas JAV tornadų ir žemės drebėjimų duomenų vizualizavimo galimybes, įskaitant interaktyvius filtrus ir 3D atvaizdavimą.</p>
+            <div class="map-category">
+                <h2>1. Kepler.gl Žemėlapiai</h2>
+                <p>Šie trys žemėlapiai sukurti naudojant Kepler.gl platformą ir sudaro pirmąją praktinę užduotį. Jie demonstruoja skirtingas JAV tornadų ir žemės drebėjimų duomenų vizualizavimo galimybes, įskaitant interaktyvius filtrus ir 3D atvaizdavimą.</p>
 
-            <h3>1.1 Tornadų Trajektorijos ir Evakuacijos Prieglaudos JAV</h3>
-            <p>Šis žemėlapis analizuoja ir vizualizuoja JAV tornadų trajektorijas (nuo 1950 iki 2021 m.) bei evakuacijos pagalbos prieglaudas JAV. Tornadų sluoksnis rodo jų intensyvumą, žuvusiųjų ir sužeistųjų skaičių. Prieglaudų sluoksnyje pateikiama informacija apie pavadinimą, adresą, miestą, telefono numerį ir veikimo statusą. Naudotojai gali filtruoti tornadus pagal norimą dešimties metų periodą, siekiant pamatyti, kaip šalis prisitaiko prie šių gamtos reiškinių dažnumo ir kaip pagalbos infrastruktūra yra išdėstyta.</p>
-            <iframe src="1_praktinis/map_1.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+                <div class="map-sub-category">
+                    <h3>1.1 Tornadų Trajektorijos ir Evakuacijos Prieglaudos JAV</h3>
+                    <p>Šis žemėlapis analizuoja ir vizualizuoja JAV tornadų trajektorijas (nuo 1950 iki 2021 m.) bei evakuacijos pagalbos prieglaudas JAV. Tornadų sluoksnis rodo jų intensyvumą, žuvusiųjų ir sužeistųjų skaičių. Prieglaudų sluoksnyje pateikiama informacija apie pavadinimą, adresą, miestą, telefono numerį ir veikimo statusą. Naudotojai gali filtruoti tornadus pagal norimą dešimties metų periodą, siekiant pamatyti, kaip šalis prisitaiko prie šių gamtos reiškinių dažnumo ir kaip pagalbos infrastruktūra yra išdėstyta.</p>
+                    <iframe src="1_praktinis/map_1.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+                </div>
 
-            <h3>1.2 Istoriniai Žemės Drebėjimai Kalifornijoje </h3>
-            <p>Šis žemėlapis vaizduoja istorinius žemės drebėjimus Kalifornijoje (Gardelė). Duomenys atvaizduojami 3D formatu pagal žemės drebėjimų magnitudę, o taip pat integruota erdvinė gardelė pagal magnitudę ir laiko skalę, leidžiančią stebėti drebėjimų dinamiką.</p>
-            <iframe src="1_praktinis/map_2.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+                <div class="map-sub-category">
+                    <h3>1.2 Istoriniai Žemės Drebėjimai Kalifornijoje</h3>
+                    <p>Šis žemėlapis vaizduoja istorinius žemės drebėjimus Kalifornijoje (Gardelė). Duomenys atvaizduojami 3D formatu pagal žemės drebėjimų magnitudę, o taip pat integruota erdvinė gardelė pagal magnitudę ir laiko skalę, leidžiančią stebėti drebėjimų dinamiką.</p>
+                    <iframe src="1_praktinis/map_2.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+                </div>
 
-            <h3>1.3 Tornadų Intensyvumas </h3>
-            <p>Šis žemėlapis – "Tornadų intensyvumas nuo 1950 iki 2021 m.", atvaizduojamas gardelėmis pagal tornadų vienetus. Ši vizualizacija leidžia lengvai nustatyti, kuriose vietose ir kokiu laikotarpiu buvo didžiausias tornadų skaičius. Naudotojai gali pasirinkti dominatį laikotarpį per filtrus.</p>
-            <iframe src="1_praktinis/map_3.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
-        </div>
+                <div class="map-sub-category">
+                    <h3>1.3 Tornadų Intensyvumas</h3>
+                    <p>Šis žemėlapis – "Tornadų intensyvumas nuo 1950 iki 2021 m.", atvaizduojamas gardelėmis pagal tornadų vienetus. Ši vizualizacija leidžia lengvai nustatyti, kuriose vietose ir kokiu laikotarpiu buvo didžiausias tornadų skaičius. Naudotojai gali pasirinkti dominatį laikotarpį per filtrus.</p>
+                    <iframe src="1_praktinis/map_3.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
 
-        <div class="map-container">
-            <h2>2. Geoportal.lt Žemėlapis: Eismo Įvykių Analizė Prie Mokyklų - Lietuvos Savivaldybėse (2023 m.)</h2>
-            <p>Šis interaktyvus žemėlapis pateikia 2023 m. eismo įvykių analizę Lietuvos teritorijoje, ypatingą dėmesį skiriant švietimo įstaigų aplinkai. Žemėlapis skirtas analizuoti eismo saugą šalia mokyklų, identifikuoti rizikingas teritorijas ir remtis sprendimų priėmime švietimo, kelių infrastruktūros bei viešojo saugumo srityse.</p>
-            <p>Integruoti sluoksniai:</p>
-            <ul>
-                <li>2023 m. eismo įvykiai iš Eismo įvykių informacinės sistemos (EĮIS).</li>
-                <li>Lietuvos švietimo įstaigos (mokyklos), pateiktos taškiniu formatu.</li>
-                <li>100 m spindulio buferinės zonos aplink mokyklas.</li>
-                <li>Eismo įvykiai, įvykę ≤100 m. atstumu nuo mokyklų.</li>
-                <li>Agreguoti eismo įvykių duomenys savivaldybių lygmeniu (kartograma).</li>
-                <li>Administracinės ribos ir adresų fonas.</li>
-            </ul>
-            <iframe src="2_praktinis/index.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
-        </div>
+            <div class="map-category">
+                <h2>2. Geoportal.lt Žemėlapis: Eismo Įvykių Analizė Prie Mokyklų - Lietuvos Savivaldybėse (2023 m.)</h2>
+                <p>Šis interaktyvus žemėlapis pateikia 2023 m. eismo įvykių analizę Lietuvos teritorijoje, ypatingą dėmesį skiriant švietimo įstaigų aplinkai. Žemėlapis skirtas analizuoti eismo saugą šalia mokyklų, identifikuoti rizikingas teritorijas ir remtis sprendimų priėmime švietimo, kelių infrastruktūros bei viešojo saugumo srityse.</p>
+                <p>Integruoti sluoksniai:</p>
+                <ul>
+                    <li>2023 m. eismo įvykiai iš Eismo įvykių informacinės sistemos (EĮIS).</li>
+                    <li>Lietuvos švietimo įstaigos (mokyklos), pateiktos taškiniu formatu.</li>
+                    <li>100 m spindulio buferinės zonos aplink mokyklas.</li>
+                    <li>Eismo įvykiai, įvykę ≤100 m. atstumu nuo mokyklų.</li>
+                    <li>Agreguoti eismo įvykių duomenys savivaldybių lygmeniu (kartograma).</li>
+                    <li>Administracinės ribos ir adresų fonas.</li>
+                </ul>
+                <iframe src="2_praktinis/index.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+            </div>
 
-        <div class="map-container">
-            <h2>3. ArcGIS Online Interaktyvus Žemėlapis: Gyventojų Pasiūlymai Dėl Aplinkos Švaros</h2>
-            <p>Ši interaktyvi žemėlapio aplikacija skirta gyventojų siūlomų teritorijų švarinimo idėjų peržiūrai ir pateikimui. Vartotojai gali pažymėti užterštas vietas, įkelti duomenis, peržiūrėti kitų įrašus bei analizuoti situaciją pagal objektų tipus ir būsenas. Naudodamiesi aplikacija vartotojai gali:</p>
-            <ul>
-                <li>Peržiūrėti jau pažymėtas užterštas vietas ar teritorijas, kurioms reikalinga pagalba;</li>
-                <li>Įvesti naujus pasiūlymus, nurodydami užterštumo tipą, aprašymą, datą;</li>
-                <li>Naudotis žemėlapio funkcijomis – keisti foninius žemėlapius, atlikti paiešką ir pan.;</li>
-            </ul>
-            <p class="small-text">Visi naudotojo pateikti objektai automatiškai įgyja pradinę būseną „Pateiktas“ ir yra matomi tik vidaus peržiūros versijoje. Tik administratoriaus patvirtinti ar analizuojami objektai tampa matomi viešame žemėlapyje.</p>
-            <iframe src="3_praktinis/index.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
+            <div class="map-category">
+                <h2>3. ArcGIS Online Interaktyvus Žemėlapis: Gyventojų Pasiūlymai Dėl Aplinkos Švaros</h2>
+                <p>Ši interaktyvi žemėlapio aplikacija skirta gyventojų siūlomų teritorijų švarinimo idėjų peržiūrai ir pateikimui. Vartotojai gali pažymėti užterštas vietas, įkelti duomenis, peržiūrėti kitų įrašus bei analizuoti situaciją pagal objektų tipus ir būsenas. Naudodamiesi aplikacija vartotojai gali:</p>
+                <ul>
+                    <li>Peržiūrėti jau pažymėtas užterštas vietas ar teritorijas, kurioms reikalinga pagalba;</li>
+                    <li>Įvesti naujus pasiūlymus, nurodydami užterštumo tipą, aprašymą, datą;</li>
+                    <li>Naudotis žemėlapio funkcijomis – keisti foninius žemėlapius, atlikti paiešką ir pan.;</li>
+                </ul>
+                <p class="small-text">Visi naudotojo pateikti objektai automatiškai įgyja pradinę būseną „Pateiktas“ ir yra matomi tik vidaus peržiūros versijoje. Tik administratoriaus patvirtinti ar analizuojami objektai tampa matomi viešame žemėlapyje.</p>
+                <iframe src="3_praktinis/index.html" width="100%" height="600px" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
 
-
-    <div id="footer">
+    <footer id="footer">
         Autorius : Laura Petkevič <br> Vilniaus Universitetas, Kartografijos ir GIS
         <br> Svetainė parengta kaip 4-oji praktinė užduotis studijų dalyko "Interneto technologijos ir GIS".
         <br> Sukūrimo data: 2025 m. gegužės 29 d.
         <br> Kontaktai: <a href="mailto:laura.petkevic@chgf.stud.vu.lt">laura.petkevic@chgf.stud.vu.lt</a> | <a href="https://github.com/LAURAPETGEO" target="_blank">laurapetGeo</a>
-    </div>
+    </footer>
 
     <script src="index.js" type="text/javascript"></script>
 </body>
